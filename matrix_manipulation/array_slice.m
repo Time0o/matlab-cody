@@ -1,10 +1,10 @@
-function S = arraySlice(A, i, d)
-    subs = cell(1, ndims(A));
+function y = arraySlice(x, i, d)
+    subs = cell(1, ndims(x));
     [subs{:}] = deal(':');
 
-    if d <= ndims(A)
+    if d <= ndims(x)
         subs{d} = i;
     end
 
-    S = subsref(A, struct('type', '()', 'subs', {subs}));
+    y = subsref(x, struct('type', '()', 'subs', {subs}));
 end

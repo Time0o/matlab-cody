@@ -1,8 +1,8 @@
-function b = bubbles(a)
-    b = zeros(size(a));
+function y = bubbles(x)
+    y = zeros(size(x));
 
-    for i = 1:size(a, 2)
-        col = a(:, i);
-        b(:, i) = vertcat(repelem(0, sum(col == 0))', col(col ~= 0));
+    for i = 1:size(x, 2)
+        col = x(:, i);
+        y(:, i) = vertcat(repelem(0, sum(col == 0))', col(col ~= 0));
     end
 end
